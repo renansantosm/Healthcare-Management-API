@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Http" Version="8.1.0" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HealthcareManagement.Application\HealthcareManagement.Application.csproj" />
+    <ProjectReference Include="..\HealthcareManagement.Domain\HealthcareManagement.Domain.csproj" />
+    <ProjectReference Include="..\HealthcareManagement.Infra.Data\HealthcareManagement.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
