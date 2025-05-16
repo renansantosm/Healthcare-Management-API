@@ -4,13 +4,13 @@
 API backend para gerenciamento de dados médicos, oferecendo funcionalidades para cadastro e administração de doutores, pacientes e consultas. Desenvolvida como projeto de portfólio, demonstra a aplicação de arquitetura limpa, DDD e princípios avançados de desenvolvimento de software.
 </p>
 
-## Funcionalidades Principais
+## 🎯 Funcionalidades Principais
 - Cadastro e gestão de doutores 
 - Cadastro e gestão de pacientes
 - Agendamento e controle de consultas médicas
 - Regras operacionais de gestão clínica
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 - <b>.NET 9 </b> - Framework principal para desenvolvimento da API
 - <b>SQL Server</b> - Sistema de gerenciamento de banco de dados relacional
 - <b>Entity Framework Core</b> - ORM para acesso a dados e persistência
@@ -21,7 +21,7 @@ API backend para gerenciamento de dados médicos, oferecendo funcionalidades par
 - <b>XUnit</b> - Framework para testes unitários
 - <b>NSubstitute</b> - Framework de mocking para testes
 
-## Arquitetura e Padrões
+## 🏗️ Arquitetura e Padrões
 - **Arquitetura Limpa**: Separação clara entre Domain, Application, Infrastructure e API
 - **Domain-Driven Design**: Value Objects, Agregados, Validações de entidade e Domínio rico
 - **CQRS + Mediator**: Separação entre operações de leitura e escrita
@@ -30,7 +30,7 @@ API backend para gerenciamento de dados médicos, oferecendo funcionalidades par
 - **Injeção de Dependência**: Uso extensivo do container DI nativo do .NET
 - **SOLID**: Aplicação rigorosa dos princípios em todo o código
 
-## Regras de Negócio Destacadas
+## 📐 Regras de Negócio Destacadas
 - **Gestão operacional clínica**:
   - Limite de 2 especialidades por médico
   - Cancelamentos de consultas devem ser feitos com **antecedência mínima de 24 horas** antes do horário agendado
