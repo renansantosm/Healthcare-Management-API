@@ -1,5 +1,4 @@
 <h1 align="center" style="font-weight: bold;">Healthcare Management API 🏥 </h1>
-
 <p align="center">
 API backend para gerenciamento de dados médicos, oferecendo funcionalidades para cadastro e administração de doutores, pacientes, consultas e prescrições médicas. Desenvolvida como projeto de portfólio, demonstra a aplicação de arquitetura limpa, DDD e princípios avançados de desenvolvimento de software.
 </p>
@@ -32,6 +31,22 @@ API backend para gerenciamento de dados médicos, oferecendo funcionalidades par
 * **Repository Pattern**: Abstração da camada de persistência
 * **Factory Pattern**: Criação encapsulada de Value Objects
 * **Dependency Injection**: Container DI nativo do .NET
+
+## 📁 Estrutura do Projeto
+```
+HealthcareManagement/
+├── HealthcareManagement.API/                    # Controllers, Filters, Configurações
+├── HealthcareManagement.Application/            # Commands, Queries, Handlers, DTOs e Services
+│   ├── {Entity}/Commands/                       # Handlers e Validators por entidade
+│   ├── {Entity}/Queries/                        # Queries específicas
+│   ├── DTOs/                                    # Data Transfer Objects
+│   ├── Services/                                # Validações de existência e regras de negócio
+│   └── Behaviours/                              # MediatR Pipelines
+├── HealthcareManagement.Domain/                 # Entidades, Value Objects, Enums
+├── HealthcareManagement.Infra.Data/             # DbContext, Repositories, Providers
+├── HealthcareManagement.Infra.IoC/              # Dependency Injection
+└── *.Tests/                                     # Projetos de teste
+```
 
 ## 🔗 Endpoints Principais
 ```
