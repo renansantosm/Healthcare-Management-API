@@ -157,7 +157,7 @@ public class AppointmentController : ControllerBase
     /// <param name="id">Appointment identifier</param>
     /// <param name="model">Prescription data</param>
     /// <returns>Created prescription</returns>
-    [HttpPost("{id:Guid}/prescription")]
+    [HttpPost("{id:Guid}/prescriptions")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -189,7 +189,7 @@ public class AppointmentController : ControllerBase
     /// <param name="prescriptionId">Prescription identifier</param>
     /// <param name="model">New prescription data</param>
     /// <returns>No content response</returns>
-    [HttpPut("{appointmentId:Guid}/prescription/{prescriptionId:Guid}")]
+    [HttpPut("{appointmentId:Guid}/prescriptions/{prescriptionId:Guid}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
