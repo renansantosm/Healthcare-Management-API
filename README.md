@@ -82,18 +82,19 @@ HealthcareManagement/
 ```bash
 # Clone o repositório
 git clone https://github.com/renansantosm/Healthcare-Management-API
-cd healthcare-management-api
+cd Healthcare-Management-API
 
 # Restaure as dependências
 dotnet restore
 
 # Configure a string de conexão no appsettings.json
 # Execute as migrações do banco
-dotnet ef database update
+dotnet ef database update --project HealthcareManagement.Infra.Data -s HealthcareManagement.API -c AppDbContext
 
 # Execute a aplicação
-dotnet run
+dotnet run --project HealthcareManagement.API 
 
 # Acesse a documentação Swagger
-# https://localhost:5001/swagger
+# # [http://localhost:5021/swagger]
+# # [https://localhost:7250/swagger]
 ```
