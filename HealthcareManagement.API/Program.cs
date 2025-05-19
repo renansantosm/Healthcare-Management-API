@@ -1,6 +1,5 @@
 using HealthcareManagement.API.Filters;
 using HealthcareManagement.Infra.IoC;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
