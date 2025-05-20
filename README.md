@@ -70,6 +70,18 @@ HealthcareManagement/
 * Verificação automática de disponibilidade de agenda
 * Validações específicas para os dados da prescrição médica
 
+## 🧪 Testes
+
+O projeto inclui uma cobertura abrangente de testes unitários implementados com **XUnit** e **NSubstitute**. Os testes estão distribuídos em três projetos dedicados e cobrem:
+
+* **Modelos de Domínio**: Testes que validam o comportamento das entidades principais
+* **Value Objects**: Verificação da criação e validação dos objetos de valor
+* **Command Handlers**: Testes dos manipuladores de comandos CQRS
+* **Validação de Comandos**: Cobertura das regras de validação com Fluent Validation
+* **Serviços de Verificação**: Testes dos serviços que validam unicidade de email/CPF, existência de entidades e conflitos de horários
+* **Repositórios**: Testes dos métodos críticos de persistência de dados
+
+Esta abordagem de testes suporta a manutenção do código e garante que as regras de negócio sejam preservadas durante o desenvolvimento contínuo do projeto.
 ## 🚀 Como Executar
 
 ### 📋 Pré-requisitos
