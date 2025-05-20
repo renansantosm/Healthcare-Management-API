@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Version = "v1",
         Title = "Healthcare Management API",
-        Description = "API for managing healthcare appointments, patients, and doctors.",
+        Description = "API for managing healthcare appointments, prescriptions, patients, and doctors.",
         Contact = new OpenApiContact { Name = "Renan Moreira", Email = "renan.h.s.moreira@gmail.com", Url = new Uri("https://github.com/renansantosm") },
     });
 
