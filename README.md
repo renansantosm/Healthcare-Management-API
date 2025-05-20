@@ -103,10 +103,14 @@ dotnet restore
 # Execute as migrações do banco
 dotnet ef database update --project HealthcareManagement.Infra.Data -s HealthcareManagement.API -c AppDbContext
 
+# Execute os testes unitários
+dotnet test
+
 # Execute a aplicação
 dotnet run --project HealthcareManagement.API 
 
 # Acesse a documentação Swagger
 # # [http://localhost:5021/swagger]
 # # [https://localhost:7250/swagger]
+
 ```
