@@ -70,7 +70,7 @@ HealthcareManagement/
 * Verificação automática de disponibilidade de agenda
 * Validações específicas para os dados da prescrição médica
 
-## 🧪 Testes
+## ✅ Testes
 
 O projeto inclui uma cobertura abrangente de testes unitários implementados com **XUnit** e **NSubstitute**. Os testes estão distribuídos em três projetos dedicados e cobrem:
 
