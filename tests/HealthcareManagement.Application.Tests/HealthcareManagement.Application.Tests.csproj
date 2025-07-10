@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HealthcareManagement.Application\HealthcareManagement.Application.csproj" />
-    <ProjectReference Include="..\HealthcareManagement.Domain\HealthcareManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\src\HealthcareManagement.Application\HealthcareManagement.Application.csproj" />
+    <ProjectReference Include="..\..\src\HealthcareManagement.Domain\HealthcareManagement.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
