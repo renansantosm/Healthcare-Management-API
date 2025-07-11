@@ -134,7 +134,7 @@ dotnet restore
 dotnet test
 
 # Execute a aplicação
-dotnet run --project HealthcareManagement.API 
+dotnet run --project src/HealthcareManagement.API
 
 # Acesse a documentação Swagger
 # # [http://localhost:5021/swagger]
