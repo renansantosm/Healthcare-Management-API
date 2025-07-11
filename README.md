@@ -137,7 +137,7 @@ dotnet test
 dotnet run --project src/HealthcareManagement.API
 
 # Acesse a documentação Swagger
-# # [http://localhost:5021/swagger]
-# # [https://localhost:7250/swagger]
+# # http://localhost:5021/swagger
+# # https://localhost:7250/swagger
 
 ```
