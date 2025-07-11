@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Arquivos de debug do Docker
+docker-compose.debug.yml
+docker-compose.override.yml
+
+# Logs do Docker
+*.log
+
+# Arquivos temporários
+.tmp/
+temp/
