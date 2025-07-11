@@ -111,7 +111,7 @@ docker-compose up -d
 # http://localhost:8081
 
 # Acesse a documentação Swagger
-# http://localhost:8081/swagger
+# # http://localhost:8081/swagger
 
 ```
 ### 🔧 Execução Local (Desenvolvimento)
