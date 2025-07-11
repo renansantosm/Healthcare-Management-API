@@ -1,4 +1,5 @@
 using HealthcareManagement.API.Filters;
+using HealthcareManagement.Infra.Data.Extensions;
 using HealthcareManagement.Infra.IoC;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
@@ -50,6 +51,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+DatabaseExtensions.AddDatabase(app);
 
 app.UseHttpsRedirection();
 app.UseRouting();

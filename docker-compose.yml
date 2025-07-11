@@ -1,0 +1,37 @@
+services:
+  healthcaremanagementapi:
+    image: healthcaremanagementapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+    depends_on:
+      - sqldata
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Initial Catalog=HealthcareDB; Data Source=sqldata; Persist Security Info=True;User ID=SA; Password=Senha!2077; TrustServerCertificate=true; Encrypt=false
+      - ASPNETCORE_HTTPS_PORT=""
+    networks:
+      - app-network
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Senha!2077
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+    networks:
+      - app-network
+
+volumes:
+  sqldata:
+
+networks:
+  app-network:
+    driver: bridge
