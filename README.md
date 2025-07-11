@@ -18,6 +18,7 @@ API backend para gerenciamento de dados médicos, oferecendo funcionalidades par
 * **Fluent Validation** - Validações
 * **Swagger/OpenAPI** - Documentação da API
 * **XUnit & NSubstitute** - Testes unitários e mocks
+* **Docker** - Containerização e orquestração
 
 ## 🏗️ Arquitetura e Padrões de Design
 
@@ -35,17 +36,24 @@ API backend para gerenciamento de dados médicos, oferecendo funcionalidades par
 ## 📁 Estrutura do Projeto
 ```
 HealthcareManagement/
-├── HealthcareManagement.API/                    # Controllers, Filters, Configurações
-├── HealthcareManagement.Application/            # Commands, Queries, Handlers, DTOs e Services
-│   ├── {Entity}/Commands/                       # Handlers e Validators por entidade
-│   ├── {Entity}/Queries/                        # Queries específicas
-│   ├── DTOs/                                    # Data Transfer Objects
-│   ├── Services/                                # Validações de existência e regras de negócio
-│   └── Behaviours/                              # MediatR Pipelines
-├── HealthcareManagement.Domain/                 # Entidades, Value Objects, Enums
-├── HealthcareManagement.Infra.Data/             # DbContext, Repositories, Providers
-├── HealthcareManagement.Infra.IoC/              # Dependency Injection
-└── *.Tests/                                     # Projetos de teste
+├── src/                                         # Código fonte da aplicação
+│   ├── HealthcareManagement.API/                # Controllers, Filters, Configurações
+│   ├── HealthcareManagement.Application/        # Commands, Queries, Handlers, DTOs e Services
+│   │   ├── {Entity}/Commands/                   # Handlers e Validators por entidade
+│   │   ├── {Entity}/Queries/                    # Queries específicas
+│   │   ├── DTOs/                                # Data Transfer Objects
+│   │   ├── Services/                            # Validações de existência e regras de negócio
+│   │   └── Behaviours/                          # MediatR Pipelines
+│   ├── HealthcareManagement.Domain/             # Entidades, Value Objects, Enums
+│   ├── HealthcareManagement.Infra.Data/         # DbContext, Repositories, Providers
+│   └── HealthcareManagement.Infra.IoC/          # Dependency Injection
+├── tests/                                       # Projetos de teste
+│   ├── HealthcareManagement.Application.Tests/  # Testes da camada de aplicação
+│   ├── HealthcareManagement.Domain.Tests/       # Testes da camada de domínio
+│   └── HealthcareManagement.Infra.Data.Tests/   # Testes da camada de infraestrutura
+├── Dockerfile                                   # Configuração Docker da aplicação
+├── docker-compose.yml                           # Orquestração de contêineres
+└── HealthcareManagement.sln                     # Arquivo de solução
 ```
 
 ## 🔗 Endpoints Principais
@@ -84,7 +92,30 @@ O projeto inclui uma cobertura abrangente de testes unitários implementados com
 Esta abordagem de testes suporta a manutenção do código e garante que as regras de negócio sejam preservadas durante o desenvolvimento contínuo do projeto.
 ## 🚀 Como Executar
 
-### 📋 Pré-requisitos
+### 🐳 Execução com Docker (Recomendado)
+📋 Pré-requisitos
+* Docker
+* Git
+### ⚙️ Instalação e Execução
+
+
+```bash
+# Clone o repositório
+git clone https://github.com/renansantosm/Healthcare-Management-API
+cd Healthcare-Management-API
+
+# Execute com Docker Compose (inclui SQL Server)
+docker-compose up -d
+
+# A aplicação estará disponível em:
+# http://localhost:8081
+
+# Acesse a documentação Swagger
+# http://localhost:8081/swagger
+
+```
+### 🔧 Execução Local (Desenvolvimento)
+📋 Pré-requisitos
 * .NET 9 SDK
 * SQL Server (LocalDB, Express ou completo)
 * Git
@@ -98,10 +129,6 @@ cd Healthcare-Management-API
 
 # Restaure as dependências
 dotnet restore
-
-# Configure a string de conexão no appsettings.json
-# Execute as migrações do banco
-dotnet ef database update --project HealthcareManagement.Infra.Data -s HealthcareManagement.API -c AppDbContext
 
 # Execute os testes unitários
 dotnet test
